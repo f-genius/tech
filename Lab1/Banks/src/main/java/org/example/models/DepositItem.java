@@ -8,16 +8,16 @@ public class DepositItem {
     private long upperLimit;
     private long lowerLimit;
 
-    public DepositItem(long _percent, long _upperLimit, long _lowerLimit) {
-        if (_lowerLimit >= _upperLimit)
+    public DepositItem(long percent, long upperLimit, long lowerLimit) {
+        if (lowerLimit >= upperLimit)
             throw new IllegalArgumentException("Lower limit should be less than upper limit");
-        if (_lowerLimit < 0)
+        if (lowerLimit < 0)
             throw new IllegalArgumentException("Lower limit can't be negative");
-        if (_percent < 0)
+        if (percent < 0)
             throw new IllegalArgumentException("The percent can't be negative");
-        percent = _percent;
-        upperLimit = _upperLimit;
-        lowerLimit = _lowerLimit;
+        this.percent = percent;
+        this.upperLimit = upperLimit;
+        this.lowerLimit = lowerLimit;
     }
 
     /**
