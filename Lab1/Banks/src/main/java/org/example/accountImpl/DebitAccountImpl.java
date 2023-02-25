@@ -18,16 +18,16 @@ public class DebitAccountImpl implements DebitAccount {
     private boolean isDoubtful;
 
     public DebitAccountImpl (
-            long _percent,
-            long _balance,
-            boolean _isDoubtful
+            long percent,
+            long balance,
+            boolean isDoubtful
     ) {
-        if (_balance < 0)
+        if (balance < 0)
             throw new IllegalArgumentException("The balance can't be negative");
 
-        balance = _balance;
-        percent = _percent;
-        isDoubtful = _isDoubtful;
+        this.balance = balance;
+        this.percent = percent;
+        this.isDoubtful = isDoubtful;
         transactions = new ArrayList<>();
         remainders = new ArrayList<>();
         id = UUID.randomUUID();
