@@ -33,23 +33,23 @@ public class Bank implements org.example.services.Observable {
     private UUID id;
 
     public Bank (
-            long _limitTransferForDoubtful,
-            long _limitWithdrawalForDoubtful,
+            long limitTransferForDoubtful,
+            long limitWithdrawalForDoubtful,
             ArrayList<DepositItem> _depositPercents,
-            long _creditLimit,
-            long _fixPercentForDebit,
-            long _commission,
-            Period _term
+            long creditLimit,
+            long fixPercentForDebit,
+            long commission,
+            Period term
     ) {
 
-        limitTransferForDoubtful = _limitTransferForDoubtful;
-        limitWithdrawalForDoubtful = _limitWithdrawalForDoubtful;
-        depositPercents = _depositPercents;
-        creditLimit = _creditLimit;
-        fixPercentForDebit = _fixPercentForDebit;
-        commission = _commission;
+        this.limitTransferForDoubtful = limitTransferForDoubtful;
+        this.limitWithdrawalForDoubtful = limitWithdrawalForDoubtful;
+        this.depositPercents = depositPercents;
+        this.creditLimit = creditLimit;
+        this.fixPercentForDebit = fixPercentForDebit;
+        this.commission = commission;
         id = UUID.randomUUID();
-        termForDeposit = _term;
+        this.termForDeposit = term;
         clients = new ArrayList<>();
         clientAccounts = new ArrayList<>();
         observers = new HashMap<>();
