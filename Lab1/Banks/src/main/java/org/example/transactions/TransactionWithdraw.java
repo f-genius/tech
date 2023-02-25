@@ -15,20 +15,20 @@ public class TransactionWithdraw implements Transaction {
     private Account from;
 
     public TransactionWithdraw(
-            Account _from,
-            Calendar _time,
-            long _sum,
-            long _commission,
-            boolean _canceled
+            Account from,
+            Calendar time,
+            long sum,
+            long commission,
+            boolean canceled
     ) {
-        if (_sum < 0)
+        if (sum < 0)
             throw new IllegalArgumentException("The sum can't be negative");
 
-        from = _from;
-        time = _time;
-        sum = _sum;
-        commission = _commission;
-        canceled = _canceled;
+        this.from = from;
+        this.time = time;
+        this.sum = sum;
+        this.commission = commission;
+        this.canceled = canceled;
     }
 
     /**
