@@ -15,17 +15,17 @@ public class TransactionReplenishment implements Transaction {
     private boolean canceled;
 
     public TransactionReplenishment (
-            Account _account,
-            long _sum,
-            Calendar _time,
-            long _commission,
-            boolean _canceled
+            Account account,
+            long sum,
+            Calendar time,
+            long commission,
+            boolean canceled
     ) {
-        account = _account;
-        sum = _sum;
-        time = _time;
-        canceled = _canceled;
-        commission = _commission;
+        this.account = account;
+        this.sum = sum;
+        this.time = time;
+        this.canceled = canceled;
+        this.commission = commission;
     }
 
     /**
