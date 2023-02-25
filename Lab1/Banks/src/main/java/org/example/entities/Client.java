@@ -20,11 +20,11 @@ public class Client implements Observer {
     private Passport passport;
     private String address;
 
-    private Client(String _name, String _surname, String _address, Passport _passport) {
-        name = _name;
-        surname = _surname;
-        address = _address;
-        passport = _passport;
+    private Client(String name, String surname, String address, Passport passport) {
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.passport = passport;
         id = UUID.randomUUID();
         accounts = new ArrayList<>();
         notifications = new ArrayList<>();

@@ -14,13 +14,13 @@ public class CreditAccountImpl implements CreditAccount {
     private boolean isDoubtful;
     private long balance;
 
-    public CreditAccountImpl (boolean _isDoubtful, long _balance) {
-        if (_balance < 0)
+    public CreditAccountImpl (boolean isDoubtful, long balance) {
+        if (balance < 0)
             throw new IllegalArgumentException("The balance can't be negative");
 
         transactions = new ArrayList<>();
-        balance = _balance;
-        isDoubtful = _isDoubtful;
+        this.balance = balance;
+        this.isDoubtful = isDoubtful;
         id = UUID.randomUUID();
     }
 

@@ -9,9 +9,9 @@ public class SimpleNotification implements Notification {
     private Changes changes;
     private long sum;
 
-    public SimpleNotification(Changes _changes, long _sum) {
-        changes = _changes;
-        sum = _sum;
+    public SimpleNotification(Changes changes, long sum) {
+        this.changes = changes;
+        this.sum = sum;
     }
 
     /**

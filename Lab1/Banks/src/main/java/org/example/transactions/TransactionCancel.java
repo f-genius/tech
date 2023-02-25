@@ -7,8 +7,8 @@ public class TransactionCancel implements Transaction {
     private Transaction transaction;
     private boolean canceled;
 
-    public TransactionCancel(Transaction _transaction) {
-        transaction = _transaction;
+    public TransactionCancel(Transaction transaction) {
+        this.transaction = transaction;
         canceled = false;
     }
 

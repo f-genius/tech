@@ -17,26 +17,26 @@ public class TransactionTransfer implements Transaction {
     private boolean canceled;
 
     public TransactionTransfer(
-            Account _from,
-            Account _to,
-            Calendar _time,
-            long _sum,
-            long _commissionFrom,
-            long _commissionTo,
-            boolean _canceled
+            Account from,
+            Account to,
+            Calendar time,
+            long sum,
+            long commissionFrom,
+            long commissionTo,
+            boolean canceled
     ) {
-        if (_sum < 0)
+        if (sum < 0)
             throw new IllegalArgumentException("The sum can't be negative");
-        if (_from.getId().equals(_to.getId()))
+        if (from.getId().equals(to.getId()))
             throw new IllegalArgumentException("Accounts for transfer are equal");
 
-        from = _from;
-        to = _to;
-        time = _time;
-        sum = _sum;
-        commissionFrom = _commissionFrom;
-        commissionTo = _commissionTo;
-        canceled = _canceled;
+        this.from = from;
+        this.to = to;
+        this.time = time;
+        this.sum = sum;
+        this.commissionFrom = commissionFrom;
+        this.commissionTo = commissionTo;
+        this.canceled = canceled;
     }
 
     /**
