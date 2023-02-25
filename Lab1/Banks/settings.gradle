@@ -1,0 +1,3 @@
+rootProject.name = 'Banks'
+include 'Console'
+
