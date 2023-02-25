@@ -20,20 +20,20 @@ public class DepositAccountImpl implements DepositAccount {
     private Calendar time;
 
     public DepositAccountImpl (
-            long _percent,
-            long _balance,
-            Calendar _time,
-            boolean _isDoubtful
+            long percent,
+            long balance,
+            Calendar time,
+            boolean isDoubtful
     ) {
-        if (_balance < 0)
+        if (balance < 0)
             throw new IllegalArgumentException("The balance can't be negative");
 
         transactions = new ArrayList<>();
         remainders = new ArrayList<>();
-        balance = _balance;
-        percent = _percent;
-        isDoubtful = _isDoubtful;
-        time = _time;
+        this.balance = balance;
+        this.percent = percent;
+        this.isDoubtful = isDoubtful;
+        this.time = time;
         id = UUID.randomUUID();
     }
 
