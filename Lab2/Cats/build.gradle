@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.shev'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':Lab2:Cats:dao')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation project(path: ':Lab2:Cats:service')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.hibernate:hibernate-core:5.6.15.Final'
+    implementation 'org.postgresql:postgresql:42.2.27'
+}
+
+test {
+    useJUnitPlatform()
+}

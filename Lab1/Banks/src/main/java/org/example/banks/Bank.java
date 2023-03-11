@@ -9,7 +9,6 @@ import org.example.services.Observer;
 import org.example.transactions.*;
 import org.example.entities.Client;
 import org.example.models.DepositItem;
-import ru.shev.transactions.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -35,7 +34,7 @@ public class Bank implements org.example.services.Observable {
     public Bank (
             long limitTransferForDoubtful,
             long limitWithdrawalForDoubtful,
-            ArrayList<DepositItem> _depositPercents,
+            ArrayList<DepositItem> depositPercents,
             long creditLimit,
             long fixPercentForDebit,
             long commission,

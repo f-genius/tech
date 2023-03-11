@@ -12,8 +12,8 @@ public class RussianPassport implements Passport {
 
     /**
      * Creating a new object with specific values
-     * @param _series passport series
-     * @param _number passport number
+     * @param series passport series
+     * @param number passport number
      * @throws IllegalArgumentException if there are more or less digits in the number or series
      * @throws NumberFormatException in case the series or number contains non-digits
      */
