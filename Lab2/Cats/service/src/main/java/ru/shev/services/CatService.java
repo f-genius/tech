@@ -10,6 +10,6 @@ public interface CatService {
     public Cat getCatById(Integer id);
     public void updateCat(Integer id, Owner owner);
     public void deleteCat(Integer id);
-    public List getAllCats();
+    public List<Cat> getAllCats();
     public void addNewFriend(Integer id, Cat newCat);
 }
