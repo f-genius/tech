@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface OwnerDAOService {
     public Integer addOwner(Owner newOwner);
-    public List getAllOwners();
+    public List<Owner> getAllOwners();
     public Owner getOwner(Integer id);
     public void updateOwner(Integer id, String name);
     public void deleteOwner(Integer id);
