@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CatDAOService {
     public Integer addCat(Cat newCat);
-    public List getAllCats();
+    public List<Cat> getAllCats();
     public Cat getCat(Integer id);
     public void updateCat(Integer id, Owner owner);
     public void deleteCat(Integer id);
