@@ -1,4 +1,0 @@
-rootProject.name = 'Cats'
-include 'service'
-include 'dao'
-

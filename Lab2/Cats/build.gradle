@@ -10,9 +10,9 @@ repositories {
 }
 
 dependencies {
-    implementation project(path: ':dao')
+    implementation project(path: ':Lab2:Cats:dao')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testImplementation project(path: ':service')
+    testImplementation project(path: ':Lab2:Cats:service')
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
