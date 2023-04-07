@@ -34,6 +34,10 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.2.27'
 }
 
+springBoot {
+    mainClassName = 'ru.shev.catApplication'
+}
+
 test {
     useJUnitPlatform()
 }

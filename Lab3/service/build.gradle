@@ -32,6 +32,9 @@ dependencies {
     testImplementation "org.mockito:mockito-core:3.+"
     testCompileOnly 'org.mockito:mockito-junit-jupiter:4.8.1'
 }
+springBoot {
+    mainClassName = 'ru.shev.catApplication'
+}
 
 test {
     useJUnitPlatform()
