@@ -35,7 +35,7 @@ dependencies {
 }
 
 springBoot {
-    mainClassName = 'ru.shev.catApplication'
+    mainClass = 'ru.shev.catApplication'
 }
 
 test {

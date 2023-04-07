@@ -22,9 +22,15 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.26'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
 
-    implementation platform('org.springframework.boot:spring-boot-dependencies:3.0.5')
-    implementation('org.springframework.boot:spring-boot-starter-web')
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.integration:spring-integration-http'
+    implementation 'org.springframework.integration:spring-integration-jpa'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.integration:spring-integration-test'
 
     testCompileOnly 'org.assertj:assertj-core:3.11.1'
     testCompileOnly 'org.assertj:assertj-core:3.23.1'
@@ -33,7 +39,7 @@ dependencies {
     testCompileOnly 'org.mockito:mockito-junit-jupiter:4.8.1'
 }
 springBoot {
-    mainClassName = 'ru.shev.catApplication'
+    mainClass = 'ru.shev.catApplication'
 }
 
 test {
