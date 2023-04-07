@@ -34,7 +34,7 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.2.27'
 }
 
-springBoot {
+bootJar {
     mainClass = 'ru.shev.catApplication'
 }
 
