@@ -1,5 +1,6 @@
 package ru.shev.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="owners_table")
 public class Owner {
@@ -25,7 +27,7 @@ public class Owner {
     private Date birthday;
 
     @OneToMany(mappedBy = "owner")
-    private final List<Cat> cats = new ArrayList<>();
+    private List<Cat> cats = new ArrayList<>();
 
     public void addNewCat(Cat newCat) {
         if (!cats.contains(newCat))

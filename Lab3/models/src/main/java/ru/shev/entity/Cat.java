@@ -1,9 +1,7 @@
 package ru.shev.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +10,7 @@ import java.util.List;
 @EqualsAndHashCode(of = {"id"})
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name= "cats_table", schema = "public")
 public class Cat {
@@ -34,7 +33,7 @@ public class Cat {
     private Owner owner;
 
     @Transient
-    private final List<Cat> friends = new ArrayList<>();
+    private List<Cat> friends = new ArrayList<>();
 
     public void addNewFriend(Cat friendCat) {
         if (!friends.contains(friendCat))

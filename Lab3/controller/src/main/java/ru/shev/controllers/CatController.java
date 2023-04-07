@@ -1,15 +1,13 @@
-package ru.shev;
+package ru.shev.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import ru.shev.services.CatService;
 import ru.shev.dto.CatDTO;
-import ru.shev.entity.Cat;
-import ru.shev.util.Mapper;
 
+import java.text.ParseException;
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/cats")
@@ -25,8 +23,7 @@ public class CatController {
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public CatDTO create(@RequestBody CatDTO catDTO) {
-        Cat cat = Mapper.dtoConvertToCat(catDTO);
-        return Mapper.catConvertToDto(catService.add(cat));
+        return catService.add(catDTO);
     }
 
     @GetMapping("/delete/{id}")
@@ -34,27 +31,27 @@ public class CatController {
         catService.delete(id);
     }
 
-    @GetMapping
+    @GetMapping("/color/{color}")
     @ResponseBody
-    public List<CatDTO> getCats(String color) {
-        return catService.findByColor(color).stream()
-                .map(Mapper::catConvertToDto)
-                .collect(Collectors.toList());
+    public List<CatDTO> getCats(@PathVariable String color) {
+        return catService.findByColor(color);
     }
 
     @GetMapping("/{id}")
     @ResponseBody
     public CatDTO getById(@PathVariable int id) {
-        return Mapper.catConvertToDto(catService.getById(id));
+        return catService.getById(id);
     }
 
     @PostMapping("/{id}")
     @ResponseBody
-    public CatDTO update(@RequestBody CatDTO catDTO, @PathVariable int id) {
-        if (!Objects.equals(id, catDTO.getId())) {
-            throw new IllegalArgumentException("IDs are not equal");
-        }
-        Cat cat = Mapper.dtoConvertToCat(catDTO);
-        return Mapper.catConvertToDto(catService.update(cat));
+    public CatDTO update(@RequestBody CatDTO catDTO, @PathVariable int id) throws ParseException {
+        return catService.update(catDTO, id);
+    }
+
+    @GetMapping("/")
+    @ResponseBody
+    public List<CatDTO> getAll() {
+        return catService.getAll();
     }
 }
