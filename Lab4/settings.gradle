@@ -1,5 +1,0 @@
-rootProject.name = 'Lab4'
-include 'Lab4:controller'
-include 'Lab4:models'
-include 'Lab4:repository'
-include 'Lab4:service'
