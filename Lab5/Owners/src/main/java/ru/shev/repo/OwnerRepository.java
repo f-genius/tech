@@ -1,0 +1,9 @@
+package ru.shev.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import ru.shev.entity.Owner;
+
+@Repository
+public interface OwnerRepository extends JpaRepository<Owner, Integer> {
+}
